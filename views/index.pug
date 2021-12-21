@@ -1,0 +1,20 @@
+extends layout
+
+block content 
+    h3 Clubs
+    .row
+        .col-md-5
+            table.table.table-responsive
+                thead.thead-dark
+                    tr
+                        th No
+                        th Title
+                tbody
+                - var n = 1
+                while n < article
+                each article, i in articles
+                    tr
+                        th= n++
+                        th
+                            a(href="/article/" +article._id)= article.title
+                        th

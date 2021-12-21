@@ -1,0 +1,13 @@
+extends layout
+
+block content 
+
+    .card(style='width: 18rem;')
+        .card-header.bg-dark.text-white
+            | Detail Club
+        ul.list-group.list-group-flush
+            li.list-group-item= article.title
+            li.list-group-item= article.author
+            li.list-group-item= article.body
+    a.btn.btn-primary.mt-3.me-1(href="/article/edit/"+article._id) edit
+    a.btn.btn-danger.mt-3.delete-article(href='#', data-id=article._id) delete

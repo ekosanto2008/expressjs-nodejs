@@ -1,0 +1,18 @@
+extends layout
+
+block content 
+    h2 Add Article
+    .row
+        .col.col-md-5
+            form(action="/articles/edit/"+article._id, method="POST")
+                .form-group
+                    label(for='exampleInputEmail1') Title
+                    input#exampleInputEmail1.form-control(type='text' name="title" value=article.title)
+                .form-group
+                    label(for='exampleInputPassword1') Author
+                    input#exampleInputPassword1.form-control(type='text' name="author" value=article.author)
+                .form-group
+                    label(for='exampleInputPassword1') Body
+                    input#exampleInputPassword1.form-control(type='text' name="body" value=article.body)
+                button.btn.btn-success.mt-2(type='submit') Edit
+                a.btn.btn-primary.ms-1.mt-2(href="/") Back
